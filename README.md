@@ -1,7 +1,7 @@
 # ufpa-perceptron
 ## arquivos perceptron
 
-#Lnks 
+# Lnks 
 
 ## DataSets
 
