@@ -17,6 +17,7 @@ def load_csv(filename):
 # Convert string column to float
 def str_column_to_float(dataset, column):
 	for row in dataset:
+		print row
 		row[column] = float(row[column].strip())
 
 # Convert string column to integer
@@ -101,7 +102,7 @@ def perceptron(train, test, l_rate, n_epoch):
 # Test the Perceptron algorithm on the sonar dataset
 seed(1)
 # load and prepare data
-filename = '/home/diego/Documentos/sonar/arrhythmia.data.csv'
+filename = '/home/diego/Documentos/sonar/ufpa-perceptron/sonar.all-data.csv'
 dataset = load_csv(filename)
 for i in range(len(dataset[0])-1):
 	str_column_to_float(dataset, i)
@@ -109,8 +110,8 @@ for i in range(len(dataset[0])-1):
 str_column_to_int(dataset, len(dataset[0])-1)
 # evaluate algorithm
 n_folds = 3
-l_rate = 0.01
-n_epoch = 500
+l_rate = 0.3
+n_epoch = 750
 scores = evaluate_algorithm(dataset, perceptron, n_folds, l_rate, n_epoch)
 print('Scores: %s' % scores)
 print('Mean Accuracy: %.3f%%' % (sum(scores)/float(len(scores))))
